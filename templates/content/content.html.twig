@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test-Lab5com{% endblock %}
+{% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Resultats de test Lab5com </a>
+    </nav>
+{% endblock %}
+{% block body %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><p>Mettre en cache les 10000 contenus dans Memcache / Redis et prévoir une moulinette pour mettre à jour les contenus de manière aléatoire. On en mettra à jour 5000 et il faudra que le cache soit mis à jour pour ces contenus.</p></li>
+        </ol>
+    </nav>
+    {% for content in contents %}
+        <h1>{{ content.title }}</h1>
+        <h2>{{ content.description | raw}}</h2>
+    {% endfor %}
+{% endblock %}

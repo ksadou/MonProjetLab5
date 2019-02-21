@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test-Lab5com{% endblock %}
+{% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Resultats de test Lab5com </a>
+    </nav>
+{% endblock %}
+{% block body %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><p>Création de 10000 contenus avec juste un titre et une description. Le titre prendre la forme "Titre + ID" et la description "Description du titre + ID".</p></li>
+        </ol>
+    </nav>
+
+    {% for content in contents %}
+        <h1>{{ content.title }}</h1>
+        <h2>{{ content.description | raw}}</h2>
+    {% endfor %}
+{% endblock %}
